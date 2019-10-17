@@ -13,7 +13,7 @@ services:
     image: adminer
     restart: always
     ports:
-      - 38080:38080
+      - 38080:8080
   redis:
     image: redis:5.0.4-alpine
     ports:
