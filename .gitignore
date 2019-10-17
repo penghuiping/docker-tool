@@ -1,6 +1,7 @@
 .DS_Store
 basic/redis/data
 basic/mysql/volume
+basic-postgre/redis
 elk/elasticsearch
 elk/logst
 elk/logstash
