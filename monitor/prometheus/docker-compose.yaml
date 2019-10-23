@@ -1,0 +1,7 @@
+version: '2'
+services:
+  zipkin:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - 9090:9090
