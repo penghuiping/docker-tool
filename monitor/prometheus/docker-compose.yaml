@@ -1,6 +1,6 @@
 version: '2'
 services:
-  zipkin:
+  prometheus:
     image: prom/prometheus
     container_name: prometheus
     ports:
