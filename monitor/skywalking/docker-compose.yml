@@ -42,9 +42,11 @@ services:
     ports:
       - 11800:11800
       - 12800:12800
+      - 9411:9411 
     environment:
       SW_STORAGE: elasticsearch
       SW_STORAGE_ES_CLUSTER_NODES: elasticsearch:9200
+      SW_RECEIVER_ZIPKIN_ENABLED: "true"
   ui:
     image: apache/skywalking-ui:6.4.0
     container_name: ui
