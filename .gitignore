@@ -4,4 +4,3 @@ basic/mysql/volume
 basic-postgre/redis
 elk/elasticsearch
 elk/logst
-elk/logstash
