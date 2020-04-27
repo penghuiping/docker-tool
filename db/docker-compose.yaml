@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+       - 3306:3306
+    volumes:
+      - "./mysql/volume:/var/lib/mysql"
+    command: mysqld -uroot --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --init-connect='SET NAMES utf8mb4;' --innodb-flush-log-at-trx-commit=0
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_USER: "root"
+      MYSQL_PASSWORD: ""
+  postgres:
+    image: postgres:12.0-alpine
+    restart: always
+    command: postgres -c 'max_connections=1024'
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: test
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ~/pg_data/data:/var/lib/postgresql/data/pgdata
+    ports:
+     - 5432:5432
+  oracle:
+    image: wnameless/oracle-xe-11g-r2:latest
+    environment:
+      ORACLE_ALLOW_REMOTE: "true"
+      ORACLE_DISABLE_ASYNCH_IO: "true"
+    ports:
+     - 1521:1521
