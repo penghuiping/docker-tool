@@ -5,6 +5,7 @@ services:
     ports:
       - "15672:15672"
       - "5672:5672"
+      - "61613:61613"
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
